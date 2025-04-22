@@ -2,7 +2,9 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main  # or master, depending on your default branch name
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   deploy:
@@ -19,8 +21,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Build website
+        run: npm run build
+
+      - name: Configure Git identity
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
       - name: Deploy to GitHub Pages
-        run: npm run deploy
+        run: npx docusaurus deploy
         env:
           GIT_USER: github-actions
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
