@@ -1,7 +1,8 @@
 ---
 title: Pharmacokinetics
 description: Pharmacokinetics is the study of how drugs move through the body, including absorption, distribution, metabolism, and excretion (ADME).
-keywords: pharmacokinetics, ADME, absorption, distribution, metabolism, excretion
+keywords: [pharmacokinetics, absorption, distribution, metabolism, excretion, ADME]
+tags: [pharmacokinetics, pharmacology, drug metabolism]
 sidebar_position: 3
 ---
 
